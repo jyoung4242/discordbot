@@ -31,7 +31,7 @@ client.on('ready', message => {
 client.on('messageCreate', msg => {
     if (msg.author.username != 'spammyBot' && msg.channelId == channelID) {
         console.log(`Message added to messagequeue`);
-        messageArry.push(msg);
+        messageArry.push(msg.id);
         if (messageArry.length > MEESAGELIMIT && !slowDownActive) {
             msg.channel.setRateLimitPerUser(SLOWMODERATE, 'SPAMMING RATE LIMIT REACHED');
             client.channels.cache.get(channelID).send('SLOWMODE enabled');
