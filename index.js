@@ -4,11 +4,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 //defined constancts that need adjusted for each channel
-const MEESAGELIMIT = 25;
-const SLOWMODERESETLIMIT = 5;
-const SLOWMODERATE = 20;
-const COOLDOWNPERIOD = 4000;
-const channelID = '958704435117293621';
+const MEESAGELIMIT = 25; //number of queue'd messages prior to triggering slowmode
+const SLOWMODERESETLIMIT = 5; //lower limit, number of queu'd messages prior to releasing slowmode
+const SLOWMODERATE = 20; // the actual # of seconds to set for slowmode
+const COOLDOWNPERIOD = 4000; // the interfal time in ms to purge a message off stack
+const channelID = '958704435117293621'; //channel that is monitored, from discord
 
 //defined values, the message queu and the flag
 let messageArry = [];
